@@ -109,6 +109,10 @@ Yes, [Styled Calendar](https://styledcalendar.com?utm_medium=referral&utm_source
 
 == Changelog ==
 
+= [1.0.18] =
+
+* Fix - Update outdated JavaScript dependencies
+
 = [1.0.17] =
 
 * Fix - Update outdated JavaScript dependencies
