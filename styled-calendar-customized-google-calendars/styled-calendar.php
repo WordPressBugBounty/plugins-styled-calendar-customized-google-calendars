@@ -4,7 +4,7 @@
  * Plugin Name:       Styled Calendar - Customized Google Calendars
  * Plugin URI:        https://styledcalendar.com/?utm_medium=referral&utm_source=wordpress-plugin&utm_campaign=wordpress-plugin
  * Description:       Add a fully customized, mobile-responsive Google Calendar embed to your website in just a few simple clicks - no complex Google Calendar API configuration required.
- * Version:           1.0.18
+ * Version:           1.0.19
  * Author:            Styled Calendar
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -20,7 +20,7 @@ namespace StyledCalendar;
 defined('ABSPATH') or die;
 
 // Set up plugin global variables
-$styled_calendar_plugin_version = '1.0.18';
+$styled_calendar_plugin_version = '1.0.19';
 
 // Require other plugin files
 require_once( plugin_dir_path( __FILE__ ) . '/includes/admin-menu.php' );
