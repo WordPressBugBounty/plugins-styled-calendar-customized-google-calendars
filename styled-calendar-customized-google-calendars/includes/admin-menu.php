@@ -10,8 +10,16 @@ defined('ABSPATH') or die;
 add_action('admin_enqueue_scripts', function() {
   global $styled_calendar_plugin_version;
   wp_register_script('styled-calendar-admin', plugin_dir_url(__FILE__) . '../client/index.js', [], $styled_calendar_plugin_version, true);
+  wp_script_add_data('styled-calendar-admin', 'type', 'module');
   wp_register_style('styled-calendar-admin', plugin_dir_url(__FILE__) . '../client/index.css', [], $styled_calendar_plugin_version, 'all');
 });
+
+// Ensure the admin bundle is always loaded as an ES module (older WP versions may ignore wp_script_add_data('type','module'))
+add_filter('script_loader_tag', function($tag, $handle, $src) {
+  if ($handle !== 'styled-calendar-admin') return $tag;
+  if (strpos($tag, ' type=') !== false) return $tag;
+  return str_replace('<script ', '<script type="module" ', $tag);
+}, 10, 3);
 
 // Localize data for use on the client side
 add_action('admin_enqueue_scripts', function() {
